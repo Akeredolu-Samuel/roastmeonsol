@@ -103,90 +103,82 @@ export default function Home() {
         </section>
       </ScrollFlipStage>
 
-      <ScrollFlipStage scrollLength="160vh" maxRotate={48} fill>
-        <section className="dots px-4 py-16 sm:px-8">
-          <div className="mx-auto max-w-5xl">
-            <Reveal>
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-rm-faint">
-                How it works
-              </p>
-              <h2 className="mt-3 font-display text-[clamp(2.4rem,7vw,4.8rem)] leading-[0.9]">
-                WE READ THE LEDGER.
-                <br />
-                THEN WE TALK.
-              </h2>
-            </Reveal>
+      <section className="dots relative z-10 px-4 py-20 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-rm-faint">
+              How it works
+            </p>
+            <h2 className="mt-3 font-display text-[clamp(2.4rem,7vw,4.8rem)] leading-[0.9]">
+              WE READ THE LEDGER.
+              <br />
+              THEN WE TALK.
+            </h2>
+          </Reveal>
 
-            <motion.ol
-              className="mt-10 grid gap-5 sm:grid-cols-3"
-              variants={staggerParent(reduce)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-            >
-              {[
-                { n: "01", t: "Paste wallet", d: "No connect. No sign. Address only." },
-                { n: "02", t: "Scan the chain", d: "Helius pulls txs, tokens, memes, fees." },
-                { n: "03", t: "Get executed", d: "AI writes the roast. You post it on X." },
-              ].map((step) => (
-                <motion.li key={step.n} variants={fadeUp(reduce)}>
-                  <BoxFrame className="h-full bg-rm-card/80 p-5">
-                    <p className="font-mono text-[10px] tracking-[0.24em] text-rm-accent">{step.n}</p>
-                    <p className="mt-3 text-lg tracking-tight">{step.t}</p>
-                    <p className="mt-2 text-sm text-rm-muted">{step.d}</p>
-                  </BoxFrame>
-                </motion.li>
-              ))}
-            </motion.ol>
-          </div>
-        </section>
-      </ScrollFlipStage>
+          <motion.ol
+            className="mt-10 grid gap-5 sm:grid-cols-3"
+            variants={staggerParent(reduce)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          >
+            {[
+              { n: "01", t: "Paste wallet", d: "No connect. No sign. Address only." },
+              { n: "02", t: "Scan the chain", d: "Helius pulls txs, tokens, memes, fees." },
+              { n: "03", t: "Get executed", d: "AI writes the roast. You post it on X." },
+            ].map((step) => (
+              <motion.li key={step.n} variants={fadeUp(reduce)}>
+                <BoxFrame className="h-full bg-rm-card/80 p-5">
+                  <p className="font-mono text-[10px] tracking-[0.24em] text-rm-accent">{step.n}</p>
+                  <p className="mt-3 text-lg tracking-tight">{step.t}</p>
+                  <p className="mt-2 text-sm text-rm-muted">{step.d}</p>
+                </BoxFrame>
+              </motion.li>
+            ))}
+          </motion.ol>
+        </div>
+      </section>
 
-      <ScrollFlipStage scrollLength="160vh" maxRotate={48} fill>
-        <section className="dots px-4 py-16 sm:px-8">
-          <div className="mx-auto max-w-5xl">
-            <Reveal>
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-rm-faint">
-                The card people post
-              </p>
-              <h2 className="mt-3 font-display text-[clamp(2.2rem,6vw,4rem)] leading-[0.9]">
-                SHAREABLE BY DESIGN
-              </h2>
-              <p className="mt-4 max-w-lg text-rm-muted">
-                Landscape for X. Boxy frames. Color only when it hurts. Watermarked roastmeonsol.
-              </p>
-            </Reveal>
-            <div className="mt-8">
-              <RoastCard roast={SAMPLE} example />
-            </div>
+      <section className="dots relative z-10 px-4 py-20 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-rm-faint">
+              The card people post
+            </p>
+            <h2 className="mt-3 font-display text-[clamp(2.2rem,6vw,4rem)] leading-[0.9]">
+              SHAREABLE BY DESIGN
+            </h2>
+            <p className="mt-4 max-w-lg text-rm-muted">
+              Landscape for X. Boxy frames. Color only when it hurts. Watermarked roastmeonsol.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <RoastCard roast={SAMPLE} example />
           </div>
-        </section>
-      </ScrollFlipStage>
+        </div>
+      </section>
 
       {roast ? (
-        <ScrollFlipStage scrollLength="160vh" maxRotate={48} fill>
-          <section id="your-roast" className="dots px-4 py-16 sm:px-8">
-            <div className="mx-auto max-w-5xl">
-              <Reveal>
-                <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.3em] text-rm-faint">
-                  Your roast
-                </p>
-              </Reveal>
-              <RoastCard roast={roast} />
-            </div>
-          </section>
-        </ScrollFlipStage>
-      ) : null}
-
-      <ScrollFlipStage scrollLength="140vh" maxRotate={40} fill>
-        <section className="dots px-4 py-16 sm:px-8">
+        <section id="your-roast" className="dots relative z-10 px-4 py-20 sm:px-8">
           <div className="mx-auto max-w-5xl">
             <Reveal>
-              <Donate />
+              <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.3em] text-rm-faint">
+                Your roast
+              </p>
             </Reveal>
+            <RoastCard roast={roast} />
           </div>
         </section>
-      </ScrollFlipStage>
+      ) : null}
+
+      <section className="dots relative z-10 px-4 py-20 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <Reveal>
+            <Donate />
+          </Reveal>
+        </div>
+      </section>
 
       <footer className="dots border-t border-rm-border px-5 py-8 sm:px-8">
         <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
