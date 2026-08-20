@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --rm-bg: #080808;
+  --rm-card: #111111;
+  --rm-text: #f5f5f5;
+  --rm-accent: #ff3b30;
+  --rm-yellow: #ffd60a;
+  --rm-profit: #39ff88;
+  --rm-muted: #8a8a8a;
+  --rm-faint: #5c5c5c;
+  --rm-border: #1c1c1c;
+  --rm-border-subtle: #1a1a1a;
+  --rm-on-accent: #080808;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-rm-bg: #080808;
+  --color-rm-card: #111111;
+  --color-rm-text: #f5f5f5;
+  --color-rm-accent: #ff3b30;
+  --color-rm-yellow: #ffd60a;
+  --color-rm-profit: #39ff88;
+  --color-rm-muted: #8a8a8a;
+  --color-rm-faint: #5c5c5c;
+  --color-rm-border: #1c1c1c;
+  --color-rm-border-subtle: #1a1a1a;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bebas);
+  --font-mono: var(--font-ibm);
+}
+
+html,
+body {
+  background: var(--rm-bg);
+  color: var(--rm-text);
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--rm-accent);
+  color: #fff;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+.font-display {
+  font-family: var(--font-bebas), Impact, "Arial Narrow", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-mono {
+  font-family: var(--font-ibm), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.dots {
+  background-color: var(--rm-bg);
+  background-image: radial-gradient(rgba(245, 245, 245, 0.16) 1px, transparent 1.15px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.hairline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--rm-border) 20%,
+    var(--rm-border) 80%,
+    transparent
+  );
+}
